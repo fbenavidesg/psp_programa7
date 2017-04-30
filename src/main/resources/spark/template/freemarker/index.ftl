@@ -48,7 +48,7 @@
         </tr>
         <tr>
             <th>Range</th>
-            <td>${resultado.getRange()?string("####.##########")}</td>
+            <td>${resultado.getRango()?string("####.##########")}</td>
         </tr>
         <tr>
             <th>UPI</th>
