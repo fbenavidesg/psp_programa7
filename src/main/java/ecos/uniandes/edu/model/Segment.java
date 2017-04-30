@@ -1,5 +1,8 @@
 package ecos.uniandes.edu.model;
-
+/**
+ * Clase de apoyo para el calculo de integral con regla simpson
+ * @author fbenavides
+ */
 public class Segment {
     private int i;
     private double xi;

@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.uniandes.ecos.controller.app;
-
 import ecos.uniandes.edu.model.ListaPar;
 import ecos.uniandes.edu.model.Rango;
 import ecos.uniandes.edu.model.RegresionLineal;
@@ -13,13 +7,17 @@ import ecos.uniandes.edu.model.Significancia;
 import ecos.uniandes.edu.model.UtilCalculo;
 import java.io.IOException;
 import java.util.ArrayList;
-
 /**
- *
+ * Clase principal funciona como controllador frontal
  * @author fbenavides
  */
 public class ControllerApp {
-    
+    /**
+     * Clase que orquesta el calculo y empaqueta las respuestas en un objecto resultado
+     * @param rutaArchivo path de la ruta en src del la fuente de datos
+     * @return Resultado objecto con metodos set y get
+     * @throws IOException 
+     */
     public Resultado calcular( String rutaArchivo ) throws IOException{
         rutaArchivo = "src/" + rutaArchivo;
         Resultado resultado = new Resultado();
@@ -38,24 +36,12 @@ public class ControllerApp {
         double b1 = regresionLineal.calcularB1(arrayListaPar.size(),sumaXY, promedioX, promedioY, sumaX2);
         double b0 = regresionLineal.calcularB0(promedioY, b1, promedioX);
         double yk = regresionLineal.calcularProxyMejorado(b1, b0, proxy);
-        System.out.println("correlacion:" + r);
-        System.out.println("r2:" + r2);
-        System.out.println("b1:"+b1);
-        System.out.println("b0:"+b0);
-        System.out.println("proxM:" + yk);
-        
         Significancia significancia = new Significancia();
         double significanciaValor = significancia.calcular(arrayListaPar.size(), r, r2);
-        System.out.println("signifcacia:"+significanciaValor);
-        
         Rango rango = new Rango();
         double rango70 = rango.CalcularRango70( arrayListaPar.size(), arrayListaPar, proxy, promedioX, b0, b1 );
         double rango70Upi = rango.CalcularRango70Upi(yk);
-        double rango70Lpi = rango.CalcularRango70Lpi(yk); 
-        System.out.println("rango70:"+rango70);
-        System.out.println("rangoUPI:"+rango70Upi);
-        System.out.println("rangoLPI:"+rango70Lpi);
-        
+        double rango70Lpi = rango.CalcularRango70Lpi(yk);
         resultado.setProxy(proxy);
         resultado.setR(r);
         resultado.setR2(r2);

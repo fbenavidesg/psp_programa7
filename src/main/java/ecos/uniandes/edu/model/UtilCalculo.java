@@ -5,11 +5,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 /**
- *
+ * Clase de metodos utilies para la app, todos estaticos
  * @author fbenavides
  */
 public class UtilCalculo {
     
+    /**
+     * lee el archivo fuente de datos y lo ingresa en una listaPar
+     * @param path
+     * @return ArrayList ListaPar 
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     public static ArrayList<ListaPar> LeerArchivoListaPar( String path ) throws FileNotFoundException, IOException{
         ArrayList<ListaPar> arrayListPair = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader( path ));
@@ -28,6 +35,13 @@ public class UtilCalculo {
         return arrayListPair;
     }   
     
+    /**
+     * metodo que lee el archivo fuente de datos y extrae el valor del proxy
+     * @param path
+     * @return proxy doueble
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     public static double LeerArchivoBuscarProxy( String path ) throws FileNotFoundException, IOException{
         BufferedReader br = new BufferedReader(new FileReader( path ));
         String line;

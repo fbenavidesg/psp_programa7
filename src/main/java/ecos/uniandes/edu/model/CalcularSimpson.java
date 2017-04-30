@@ -1,7 +1,9 @@
 package ecos.uniandes.edu.model;
-
 import java.util.ArrayList;
-
+/**
+ * Clase que integra con la regla de simpson
+ * @author fbenavides
+ */
 public class CalcularSimpson {
     private int numSegments = 10;
     private double E = 0.00001;
@@ -37,6 +39,12 @@ public class CalcularSimpson {
         return x;
     }
     
+    /**
+     * metodo que integra con la regla de simpson
+     * @param x
+     * @param dof
+     * @return 
+     */
     public double calculate( double x, double dof ){
         do {            
             this.integral1 = this.calculateSegments( x, dof, this.numSegments );
@@ -46,6 +54,13 @@ public class CalcularSimpson {
         return this.integral2;
     }
     
+    /**
+     * metodo de apoyo para el calculo de cada segmento
+     * @param x
+     * @param dof
+     * @param numSegmentsIteration
+     * @return 
+     */
     public double calculateSegments(double x, double dof, int numSegmentsIteration) {
         double W = x / numSegmentsIteration;
         double distributionTPart1 = this.calculateDistributionT(x, dof);
@@ -62,7 +77,13 @@ public class CalcularSimpson {
         }
         return sumIntegral;
     }
-
+    
+    /**
+     * Calcula el valor de la distribucion T
+     * @param x
+     * @param dof
+     * @return 
+     */
     public double calculateDistributionT(double x, double dof) {
         double distributionT = 0.0;
         double part1Gamma = (dof + 1) / 2;
@@ -84,7 +105,13 @@ public class CalcularSimpson {
         distributionT = factoriaPart1Gamma / (Math.pow((dof * Math.PI), 0.5) * factoriaPart2Gamma);
         return distributionT;
     }
-
+    
+    /**
+     * metodo de apoyo para los valores de segmento
+     * @param key
+     * @param size
+     * @return 
+     */
     private int multiplier(int key, int size) {
         int result;
         if (key == 0 || key == size) {
