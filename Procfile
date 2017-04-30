@@ -1,0 +1,1 @@
+web:    java -jar target/PspPrograma7.jar

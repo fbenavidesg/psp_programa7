@@ -1,0 +1,28 @@
+package ecos.uniandes.edu.model;
+/**
+ *
+ * @author fbenavides
+ */
+public class Significancia {
+    
+    /**
+     * 
+     * @param n
+     * @param r
+     * @param r2
+     * @return 
+     */
+    public double calcular(int n, double r, double r2){
+        double resultado;
+        double x = this.calcularX(n, r, r2);
+        CalcularSimpson calculateSimpson = new CalcularSimpson();
+        double p = calculateSimpson.calculate(x, n-2);
+        resultado = 1- 2*p;
+        return resultado;
+    }
+    
+    private double calcularX(int n, double r, double r2){
+        double resultado = (r * Math.sqrt(n-2))/ Math.sqrt(1-r2);
+        return resultado;
+    }
+}
