@@ -21,9 +21,8 @@ import java.util.ArrayList;
 public class ControllerApp {
     
     public Resultado calcular( String rutaArchivo ) throws IOException{
-        
+        rutaArchivo = "src/" + rutaArchivo;
         Resultado resultado = new Resultado();
-        //String rutaArchivo = "src/valores.txt";
         ArrayList<ListaPar> arrayListaPar = UtilCalculo.LeerArchivoListaPar(rutaArchivo);
         RegresionLineal regresionLineal = new RegresionLineal();
         double proxy = UtilCalculo.LeerArchivoBuscarProxy(rutaArchivo);

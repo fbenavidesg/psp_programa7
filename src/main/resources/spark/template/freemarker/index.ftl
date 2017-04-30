@@ -16,6 +16,15 @@
     }
 </style>
 <body>
-    Hola
+    <table>
+        <tr>
+            <th>r</th>
+            <td>${resultado.getR()?string("####.##########")}</td>
+        </tr>
+        <tr>
+            <th>r2</th>
+            <td>${resultado.getR2()?string("####.##########")}</td>
+        </tr>
+    </table>
 </body>
 </html>
