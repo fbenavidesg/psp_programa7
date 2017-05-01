@@ -17,7 +17,7 @@ public class Significancia {
         double x = this.calcularX(n, r, r2);
         CalcularSimpson calculateSimpson = new CalcularSimpson();
         double p = calculateSimpson.calculate(x, n-2);
-        resultado = 1- 2*p;
+        resultado = 1 - 2*p;
         return resultado;
     }
     
