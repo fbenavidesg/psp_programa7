@@ -5,15 +5,17 @@ Fredy Benavides Gordillo
 
 
 #### Descargar de repositorio git ####
-	> git clone https://github.com/fbenavidesg/psp_programa6.git
-    > cd psp_programa6
+	> git clone https://github.com/fbenavidesg/psp_programa7.git
+    > cd psp_programa7
 	> mvn package
 	
 
 
 ####heroku####
 
-https://pspprograma6.herokuapp.com/?p=0.20&dof=6&xExpected=0.55338
-https://pspprograma6.herokuapp.com/?p=0.45&dof=15&xExpected=1.75305
-https://pspprograma6.herokuapp.com/?p=0.495&dof=4&xExpected=4.60409
+Urls de test1, test2, test3 y test4 respectivamente.
 
+https://pspprograma7.herokuapp.com/?archivo=valores.txt
+https://pspprograma7.herokuapp.com/?archivo=valores2.txt
+https://pspprograma7.herokuapp.com/?archivo=valores3.txt
+https://pspprograma7.herokuapp.com/?archivo=valores4.txt

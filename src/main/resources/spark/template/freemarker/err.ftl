@@ -17,7 +17,7 @@
 </style>
 <body>
     <h2>Busqueda de f(x) con Regla Simpson</h2>
-    <div>Datos de entrada insuficientes, debe agregar valores en la url</div>
-    <div>ejemplo: ${uri}?p=0.20&dof=6&xExpected=0.55338</div>
+    <div>Datos de entrada insuficientes, debe agregar valores en la url, los archivos deben estar en src de la app</div>
+    <div>ejemplo: ${uri}?archivo=valores.txt</div>
 </body>
 </html>
